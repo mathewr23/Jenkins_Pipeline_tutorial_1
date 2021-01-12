@@ -4,9 +4,13 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'echo "Hello World"'
+                sh 'echo "Your name is" && whoami'
                 sh '''
                     echo "Multiline shell steps works too"
-                    ls -lah
+                    echo "Your present working directory is: "
+                    pwd
+                    echo "These are the items in your present working directory: "
+                    ls -lap
                 '''
             }
         }
